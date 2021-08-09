@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    //ES6 Class
+/*
+    class stack
+    {
+        constructor()
+        {
+            this.name = 'stack'; 
+        }
+    }
+
+    var x = new stack();
+    console.log('x:', x)
+
+    
+
+    //1. Initialise a stack
+    class Stack{
+
+        constructor(){
+
+            this.stack = [];
+            this.length = 0 ;
+        }
+
+
+    }
+
+    Stack.prototype.push = function(){
+        console.log('worked???')
+    }
+
+    let x= new Stack();
+    
+    x.push()
+    console.log('x:', x);
+
+    */
+
+     class Stack {
+
+            constructor() {
+
+                this.stack = [];
+                this.length = 0;
+            }
+
+/*
+            insert(b) {
+           
+                this.stack.push(b);
+                this.length++;
+
+         }
+*/
+
+          insert(...b) {
+
+
+            b.forEach((el)=>{
+                
+                  this.stack.push(el);
+                  this.length++;
+            });
+
+         }
+
+         remove(){
+             this.stack.pop();
+             this.length--;
+         }
+
+         peek(){
+
+            let last = this.stack[this.length - 1];
+            console.log("last :"+ last); 
+
+         }
+
+}
+
+        let x = new Stack();
+/*
+
+
+        x.insert("The Alchemist");
+        x.insert("Ikigai");
+        x.insert("kite runner");
+*/
+    x.insert("alchemist", "ikigai", "kit");
+    x.remove();
+    x.peek();
+
+        console.log('x:', x)
+    
+</script>
